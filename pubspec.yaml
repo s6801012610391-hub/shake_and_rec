@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   gal: ^2.3.3
+  record: ^7.1.1
   sensors_plus: ^7.1.0
 
 dev_dependencies:
