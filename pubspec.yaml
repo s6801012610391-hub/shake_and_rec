@@ -1,4 +1,4 @@
-name: shake_and_rec
+name: shake_camera
 description: "A new Flutter project."
 publish_to: 'none'
 version: 0.1.0+1
@@ -7,12 +7,14 @@ environment:
   sdk: ^3.12.2
 
 dependencies:
-  camera: ^0.12.1
   flutter:
     sdk: flutter
-  gal: ^2.3.3
+  camera: ^0.11.0+2
+  gal: ^2.3.0
+  sensors_plus: ^6.0.0
   record: ^7.1.1
-  sensors_plus: ^7.1.0
+  audioplayers: ^6.0.0
+  path_provider: ^2.1.4
 
 dev_dependencies:
   flutter_test:
