@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:math';
 import 'package:camera/camera.dart';
@@ -202,7 +201,7 @@ class _ShakeCameraScreenState extends State<ShakeCameraScreen> {
                   onPressed: _isCountingDown ? null : _switchCamera,
                   backgroundColor: Colors.blue,
                   child: const Icon(
-                    Icons.switch_camera,
+                    Icons.flip_camera_android,
                     color: Colors.white,
                     size: 30,
                   ),
