@@ -7,8 +7,11 @@ environment:
   sdk: ^3.12.2
 
 dependencies:
+  camera: ^0.12.1
   flutter:
     sdk: flutter
+  gal: ^2.3.3
+  sensors_plus: ^7.1.0
 
 dev_dependencies:
   flutter_test:
