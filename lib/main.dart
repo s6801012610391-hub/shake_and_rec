@@ -44,7 +44,9 @@ class _ShakeCameraScreenState extends State<ShakeCameraScreen> {
   Timer? _timer;
 
   StreamSubscription<UserAccelerometerEvent>? _accelerometerSubscription;
-  double _shakeThreshold = 15;
+  double _thresholdPercentage = 50.0;
+  final double _maxThreshold = 30.0;
+  double get _shakeThreshold => (_maxThreshold * _thresholdPercentage)/100;
   DateTime _lastShakeTime = DateTime.now();
   ResolutionPreset _currentResolution = ResolutionPreset.high;
   int _selectedCountdownSeconds = 3;
@@ -298,7 +300,7 @@ class _ShakeCameraScreenState extends State<ShakeCameraScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    'ความแรงในการเขย่า: ${_shakeThreshold.toInt()}',
+                    'ความแรงในการเขย่า: ${_thresholdPercentage.toInt()}',
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -307,15 +309,15 @@ class _ShakeCameraScreenState extends State<ShakeCameraScreen> {
                   ),
                   
                   Slider(
-                    value: _shakeThreshold,
-                    min: 5.0,
-                    max: 30.0,
-                    divisions: 25,
+                    value: _thresholdPercentage,
+                    min: 10.0,
+                    max: 100.0,
+                    divisions: 18,
                     activeColor: Colors.blue,
                     inactiveColor: Colors.white60,
                     onChanged: (double value) {
                       setState(() {
-                        _shakeThreshold = value;
+                        _thresholdPercentage = value;
                       });
                     },
                   ),
